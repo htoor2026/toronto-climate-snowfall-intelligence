@@ -125,8 +125,12 @@ def main() -> int:
     predictions, metrics, recent, decision = (
         evaluate_retraining(
             updated,
+            strict_history,
             min_train_size=int(
                 config["min_train_size"]
+            ),
+            climatology_window=int(
+                config["climatology_window"]
             ),
             minimum_mae_skill_pct=float(
                 config[
