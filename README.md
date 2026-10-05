@@ -321,6 +321,69 @@ El Nino / ONI is a predictor, not a new target label. A new predictor value shou
 ### Why keep climatology in production?
 Because the ML challenger has not passed the pre-specified promotion gate. The system prefers evidence over complexity.
 
+## Future work
+
+The current system is designed so future data can be incorporated without changing the forecasting methodology.
+
+### During the pre-winter period
+
+As new climate information becomes available, especially updated **ENSO / El Nino (ONI)**, **NAO**, and Sep-Oct Toronto weather:
+
+```text
+new ONI / NAO / autumn weather
+        |
+        v
+refresh current-season predictors
+        |
+        v
+update challenger forecast when inputs are complete
+        |
+        v
+compare with previous forecast
+        |
+        v
+report / alert only if the change is material
+```
+
+This is a **forecast refresh**, not model retraining. El Nino / ONI is an input feature; a new value does not create a new supervised-learning label.
+
+### After the winter is complete
+
+When the season finishes and a strict-quality observed snowfall total becomes available:
+
+```text
+archived pre-winter feature snapshot
++ completed observed snowfall
+        |
+        v
+append one new labelled season
+        |
+        v
+retrain ElasticNetCV challenger
+        |
+        v
+rerun expanding walk-forward evaluation
+        |
+        v
+compare against 30-season production climatology
+        |
+        v
+register new MLflow version
+        |
+        v
+promote only if the configured gate is passed
+```
+
+This lets the system learn from new winters while preserving leakage-safe historical features and objective model governance.
+
+### Possible later extensions
+
+- schedule forecast refreshes automatically during the pre-winter period
+- trigger the agent/email workflow only after material forecast changes
+- add more winters before reconsidering higher-capacity models
+- test additional climate predictors only when they can be justified and evaluated out of sample
+- deploy the Streamlit dashboard publicly for demonstration
+
 ## Limitations
 
 - seasonal snowfall provides a small effective supervised-learning sample
