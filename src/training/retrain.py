@@ -22,8 +22,10 @@ class RetrainingDecision:
 
 def evaluate_retraining(
     data: pd.DataFrame,
+    strict_history: pd.DataFrame,
     *,
     min_train_size: int,
+    climatology_window: int,
     minimum_mae_skill_pct: float,
     minimum_rmse_skill_pct: float,
 ) -> tuple[
@@ -34,7 +36,9 @@ def evaluate_retraining(
 ]:
     predictions, metrics = walk_forward_compare(
         data,
+        strict_history,
         min_train_size=min_train_size,
+        climatology_window=climatology_window,
     )
 
     recent = recent_period_metrics(
