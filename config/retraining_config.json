@@ -1,5 +1,6 @@
 {
   "min_train_size": 20,
+  "climatology_window": 30,
   "minimum_mae_skill_vs_climatology_pct": 3.0,
   "minimum_rmse_skill_vs_climatology_pct": 0.0
 }

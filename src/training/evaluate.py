@@ -9,18 +9,7 @@ from sklearn.model_selection import TimeSeriesSplit
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-
-FINAL_FEATURES = [
-    "oni_jas",
-    "nao_jas",
-    "sep_oct_mean_temp_c",
-    "sep_oct_total_precip_mm",
-    "snow_lag1_cm",
-    "snow_roll5_mean_cm",
-    "snow_roll10_mean_cm",
-    "snow_roll10_std_cm",
-    "year_index",
-]
+from src.forecasting.feature_builder import FINAL_FEATURES
 
 
 def make_elasticnet(n_train: int) -> Pipeline:
@@ -48,14 +37,64 @@ def _rmse(y_true, y_pred) -> float:
     )
 
 
+def production_climatology_prediction(
+    strict_history: pd.DataFrame,
+    *,
+    season_year: int,
+    climatology_window: int = 30,
+) -> float:
+    """
+    Reproduce the production point-forecast benchmark for one historical season.
+
+    The benchmark uses the latest N strict-quality winters available before the
+    target season. This intentionally uses the strict snowfall history rather
+    than the smaller ML-ready feature table.
+    """
+    prior = (
+        strict_history[
+            ["season_year", "snowfall_cm"]
+        ]
+        .dropna()
+        .drop_duplicates("season_year")
+        .sort_values("season_year")
+    )
+
+    prior = prior[
+        pd.to_numeric(
+            prior["season_year"],
+            errors="coerce",
+        ) < int(season_year)
+    ]
+
+    values = (
+        pd.to_numeric(
+            prior["snowfall_cm"],
+            errors="coerce",
+        )
+        .dropna()
+        .tail(climatology_window)
+        .to_numpy(dtype=float)
+    )
+
+    if len(values) < climatology_window:
+        raise ValueError(
+            f"Need {climatology_window} strict prior winters for season "
+            f"{season_year}; found {len(values)}."
+        )
+
+    return float(np.mean(values))
+
+
 def walk_forward_compare(
     data: pd.DataFrame,
+    strict_history: pd.DataFrame,
     *,
     min_train_size: int = 20,
+    climatology_window: int = 30,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
-    Compare production benchmark climatology vs ElasticNet challenger
-    on the exact same expanding-window test winters.
+    Compare the ML challenger with the actual production climatology definition
+    on the same one-step expanding-window test winters.
     """
     required = ["season_year", "snowfall_cm"] + FINAL_FEATURES
 
@@ -79,9 +118,10 @@ def walk_forward_compare(
         actual = float(test["snowfall_cm"].iloc[0])
         season_year = int(test["season_year"].iloc[0])
 
-        # Production benchmark: expanding historical mean.
-        climatology_pred = float(
-            train["snowfall_cm"].mean()
+        climatology_pred = production_climatology_prediction(
+            strict_history,
+            season_year=season_year,
+            climatology_window=climatology_window,
         )
 
         rows.append({
@@ -91,7 +131,6 @@ def walk_forward_compare(
             "predicted_cm": climatology_pred,
         })
 
-        # Challenger: ElasticNet + climate features.
         model = make_elasticnet(len(train))
         model.fit(
             train[FINAL_FEATURES],
