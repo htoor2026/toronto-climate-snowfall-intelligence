@@ -4,6 +4,12 @@ An end-to-end portfolio project for **historical climate analysis, probabilistic
 
 The project is intentionally conservative: a more complex model is **not** promoted unless it proves better than the production benchmark under leakage-safe walk-forward validation.
 
+## Live Demo
+
+🌐 **Streamlit Dashboard:** https://toronto-climate-snowfall-intelligence.streamlit.app/
+
+💻 **Source Code:** https://github.com/htoor2026/toronto-climate-snowfall-intelligence
+
 ## Business question
 
 > **How much snowfall should Toronto expect this winter, how uncertain is that estimate, and has new climate information changed the outlook enough to justify an operational response?**
