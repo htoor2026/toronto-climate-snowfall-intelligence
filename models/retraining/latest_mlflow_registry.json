@@ -1,6 +1,6 @@
 {
   "generated_at_utc": "2026-10-01T21:17:02.117548+00:00",
-  "tracking_uri": "sqlite:////Users/toor/Desktop/Weather-Prediction/toronto-climate-analysis/tracking/mlflow.db",
+  "tracking_backend": "tracking/mlflow.db",
   "experiment_name": "toronto-snowfall-retraining",
   "registered_model_name": "toronto-seasonal-snowfall",
   "champion": {
