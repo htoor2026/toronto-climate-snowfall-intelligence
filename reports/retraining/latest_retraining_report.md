@@ -6,8 +6,8 @@
 
 ## Champion vs challenger
 
-- ElasticNet + NAO: MAE=31.30 cm, RMSE=38.05 cm, bias=+8.82 cm, MAE skill=+0.8%, RMSE skill=-0.5%
-- Historical Climatology: MAE=31.56 cm, RMSE=37.87 cm, bias=+9.92 cm, MAE skill=+0.0%, RMSE skill=+0.0%
+- ElasticNet + NAO: MAE=31.30 cm, RMSE=38.05 cm, bias=+8.82 cm, MAE skill=+0.6%, RMSE skill=-1.7%
+- Historical Climatology: MAE=31.50 cm, RMSE=37.43 cm, bias=+5.45 cm, MAE skill=+0.0%, RMSE skill=+0.0%
 
 ## Promotion decision
 
