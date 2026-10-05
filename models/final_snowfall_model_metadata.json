@@ -1,0 +1,23 @@
+{
+  "selected_model": "Historical Climatology",
+  "decision": "No complex model passes the practical skill gate; retain climatology as the benchmark production method",
+  "features": [
+    "oni_jas",
+    "nao_jas",
+    "sep_oct_mean_temp_c",
+    "sep_oct_total_precip_mm",
+    "snow_lag1_cm",
+    "snow_roll5_mean_cm",
+    "snow_roll10_mean_cm",
+    "snow_roll10_std_cm",
+    "year_index"
+  ],
+  "training_start_season": 1951,
+  "training_end_season": 2026,
+  "n_training_rows": 70,
+  "practical_skill_gate": {
+    "minimum_mae_skill_pct": 3.0,
+    "minimum_rmse_skill_pct": 0.0
+  },
+  "forecast_value_cm": 119.27714285714285
+}

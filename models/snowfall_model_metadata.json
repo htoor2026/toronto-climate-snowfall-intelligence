@@ -1,0 +1,20 @@
+{
+  "selected_by": "lowest walk-forward MAE",
+  "best_model_name": "Historical Climatology",
+  "walk_forward_mae_cm": 31.561097388740503,
+  "walk_forward_rmse_cm": 37.87485108169274,
+  "training_start_season": 1951,
+  "training_end_season": 2026,
+  "n_training_rows": 70,
+  "features": [
+    "oni_jas",
+    "sep_oct_mean_temp_c",
+    "sep_oct_total_precip_mm",
+    "snow_lag1_cm",
+    "snow_roll5_mean_cm",
+    "snow_roll10_mean_cm",
+    "snow_roll10_std_cm",
+    "year_index"
+  ],
+  "climatology_mean_cm": 119.27714285714285
+}

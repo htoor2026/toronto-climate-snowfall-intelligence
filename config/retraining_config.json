@@ -1,0 +1,5 @@
+{
+  "min_train_size": 20,
+  "minimum_mae_skill_vs_climatology_pct": 3.0,
+  "minimum_rmse_skill_vs_climatology_pct": 0.0
+}

@@ -1,0 +1,8 @@
+{
+  "tracking_db": "tracking/mlflow.db",
+  "experiment_name": "toronto-snowfall-retraining",
+  "registered_model_name": "toronto-seasonal-snowfall",
+  "champion_alias": "champion",
+  "challenger_alias": "challenger",
+  "climatology_window": 30
+}

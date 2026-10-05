@@ -1,0 +1,22 @@
+{
+  "production_method": "Probabilistic Climatology",
+  "production_decision": "Probabilistic challenger does not pass the practical skill gate; retain climatology as production benchmark.",
+  "climatology_window": 30,
+  "prediction_interval": "80%",
+  "category_definition": {
+    "below": "<= rolling historical 33rd percentile",
+    "near": "between rolling historical 33rd and 67th percentiles",
+    "above": "> rolling historical 67th percentile"
+  },
+  "challenger_features": [
+    "oni_jas",
+    "nao_jas",
+    "sep_oct_mean_temp_c",
+    "sep_oct_total_precip_mm",
+    "snow_lag1_cm",
+    "snow_roll5_mean_cm",
+    "snow_roll10_mean_cm",
+    "snow_roll10_std_cm",
+    "year_index"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "target_station_id": 51459,
+  "target_station_name": "Toronto Intl A / Pearson",
+  "climatology_window": 30,
+  "autumn_min_coverage_pct": 95.0,
+  "material_expected_change_cm": 10.0,
+  "material_probability_change": 0.1,
+  "material_interval_bound_change_cm": 15.0,
+  "challenger_enabled": true,
+  "forecast_history_path": "forecasts/forecast_history.jsonl",
+  "latest_forecast_path": "forecasts/latest_forecast.json"
+}

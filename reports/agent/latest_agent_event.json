@@ -1,0 +1,11 @@
+{
+  "generated_at_utc": "2026-10-01T21:30:19.489976+00:00",
+  "should_report": true,
+  "should_email": false,
+  "event_types": [
+    "manual_report"
+  ],
+  "reasons": [
+    "manual report requested"
+  ]
+}

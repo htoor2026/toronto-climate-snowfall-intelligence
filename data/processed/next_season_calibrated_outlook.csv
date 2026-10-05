@@ -1,0 +1,2 @@
+season_year,method,expected_snowfall_cm,median_snowfall_cm,lower80_cm,upper80_cm,below_normal_threshold_cm,above_normal_threshold_cm,p_below,p_near,p_above,original_lower80_cm,original_upper80_cm,calibration_method,conformal_qhat_cm,calibrated_lower80_cm,calibrated_upper80_cm,calibrated_width_cm
+2027,Probabilistic Climatology,117.08666666666664,124.79999999999998,65.34,154.63000000000002,95.4,138.43333333333334,0.3333333333333333,0.3333333333333333,0.3333333333333333,65.34,154.63000000000002,Conformalized Empirical Interval,6.6699999999999875,58.670000000000016,161.3,102.63

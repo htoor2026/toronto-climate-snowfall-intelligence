@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets / environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Raw downloaded data
+data/raw/
+
+# Local databases
+database/*.duckdb
+database/*.duckdb.wal
+
+# MLflow local database / artifacts
+tracking/
+mlruns/
+
+# Model binaries
+models/retraining/*.joblib
+
+# Temporary archives/files
+*.zip
+project_tree.txt

@@ -1,0 +1,81 @@
+{
+  "season_year": 2027,
+  "predictor_year": 2026,
+  "production_forecast": {
+    "status": "ready",
+    "role": "production",
+    "method": "Probabilistic Climatology",
+    "season_year": 2027,
+    "history_n": 30,
+    "expected_snowfall_cm": 117.08666666666664,
+    "median_snowfall_cm": 124.79999999999998,
+    "empirical_lower80_cm": 65.34,
+    "empirical_upper80_cm": 154.63000000000002,
+    "calibrated_lower80_cm": 58.670000000000016,
+    "calibrated_upper80_cm": 161.3,
+    "below_normal_threshold_cm": 95.39999999999999,
+    "above_normal_threshold_cm": 138.43333333333334,
+    "p_below": 0.3333333333333333,
+    "p_near": 0.3333333333333333,
+    "p_above": 0.3333333333333333,
+    "calibration_method": "Conformalized Empirical Interval",
+    "conformal_qhat_cm": 6.6699999999999875
+  },
+  "challenger_forecast": {
+    "status": "not_ready",
+    "role": "challenger",
+    "method": "ElasticNet + NAO Residual",
+    "season_year": 2027,
+    "reason": "sep_oct_features_not_complete",
+    "temp_coverage_pct": 49.18032786885246,
+    "precip_coverage_pct": 49.18032786885246
+  },
+  "live_predictors": {
+    "predictor_year": 2026,
+    "oni_jas": null,
+    "nao_jas": null,
+    "nao_jas_valid_months": 2,
+    "sep_oct_mean_temp_c": 18.473333333333336,
+    "sep_oct_total_precip_mm": 48.099999999999994,
+    "sep_oct_temp_coverage_pct": 49.18032786885246,
+    "sep_oct_precip_coverage_pct": 49.18032786885246,
+    "autumn_features_usable": false,
+    "autumn_observed_rows": 61
+  },
+  "current_feature_row": {
+    "season_year": 2027,
+    "oni_jas": null,
+    "nao_jas": null,
+    "sep_oct_mean_temp_c": 18.473333333333336,
+    "sep_oct_total_precip_mm": 48.099999999999994,
+    "snow_lag1_cm": 190.6,
+    "snow_roll5_mean_cm": 140.46,
+    "snow_roll10_mean_cm": 130.9,
+    "snow_roll10_std_cm": 38.93099664791541,
+    "year_index": 88.0
+  },
+  "change_detection": {
+    "material": false,
+    "production": {
+      "material": false,
+      "reasons": [],
+      "metrics": {
+        "expected_change_cm": 0.0,
+        "p_below_change": 0.0,
+        "p_near_change": 0.0,
+        "p_above_change": 0.0,
+        "calibrated_lower80_cm_change_cm": 0.0,
+        "calibrated_upper80_cm_change_cm": 0.0
+      }
+    },
+    "challenger": {
+      "material": false,
+      "reasons": [],
+      "metrics": {
+        "previous_status": "not_ready",
+        "current_status": "not_ready"
+      }
+    }
+  },
+  "generated_at_utc": "2026-10-01T19:36:52.521500+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "target_coverage": 0.8,
+  "alpha": 0.2,
+  "minimum_calibration_winters": 15,
+  "selected_interval_method": "Conformalized Empirical Interval",
+  "final_qhat_cm": 6.6699999999999875,
+  "original_backtest_coverage": 0.68,
+  "selected_backtest_coverage": 0.8285714285714286,
+  "selected_mean_width_cm": 94.894
+}

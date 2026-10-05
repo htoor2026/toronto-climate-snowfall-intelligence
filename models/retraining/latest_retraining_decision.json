@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-10-01T20:44:53.999957+00:00",
+  "training_rows": 70,
+  "latest_training_season": 2026,
+  "appended_seasons": [],
+  "skipped_missing_ready_snapshot": [
+    1939,
+    1941,
+    1942,
+    1943,
+    1944,
+    1945,
+    1946,
+    1947,
+    1948,
+    1949,
+    1950,
+    1995,
+    2014,
+    2022
+  ],
+  "champion": "Historical Climatology",
+  "challenger": "ElasticNet + NAO",
+  "promotion_gate": {
+    "minimum_mae_skill_vs_climatology_pct": 3.0,
+    "minimum_rmse_skill_vs_climatology_pct": 0.0
+  },
+  "challenger_mae_skill_pct": 0.8127224231753938,
+  "challenger_rmse_skill_pct": -0.46362760033773487,
+  "promote_challenger": false,
+  "decision_reason": "Challenger does not pass the configured walk-forward skill gates; retain climatology as champion."
+}

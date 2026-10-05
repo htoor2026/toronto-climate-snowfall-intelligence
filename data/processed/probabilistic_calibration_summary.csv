@@ -1,0 +1,7 @@
+method,category,mean_forecast_probability,observed_frequency,calibration_gap
+ElasticNet + NAO Residual,below,0.43516949716949715,0.44,-0.0048305028305028475
+ElasticNet + NAO Residual,near,0.2851361971361971,0.28,0.005136197136197063
+ElasticNet + NAO Residual,above,0.2796943056943057,0.28,-0.0003056943056943262
+Probabilistic Climatology,below,0.33733333333333326,0.44,-0.10266666666666674
+Probabilistic Climatology,near,0.3293333333333333,0.28,0.049333333333333285
+Probabilistic Climatology,above,0.33333333333333326,0.28,0.05333333333333323
